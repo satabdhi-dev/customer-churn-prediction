@@ -16,7 +16,7 @@ The dataset contains information about **7,043 customers**, including:
 We begin by analyzing churn patterns across multiple variables to uncover actionable insights.
 
 ### 🔸 Churn Distribution
-![Churn Distribution](images/Churn%20Distribution.png)
+![Churn Distribution]("C:\Users\satab\Downloads\churn-analysis-visualizations\Churn Distribution.png")
 
 > **~26.6%** of customers churned.  
 > The dataset shows moderate imbalance.
