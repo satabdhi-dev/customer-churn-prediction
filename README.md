@@ -1,89 +1,111 @@
-# 📉 Customer Churn Analysis & Prediction using Machine Learning
+# 📉 Customer Churn Analysis with Machine Learning
 
-This project focuses on analyzing customer churn behavior in the telecom industry using a real-world dataset. We explore churn patterns with detailed visualizations, quantify business impact, and train a machine learning model to predict churn with strong performance.
+This project analyzes customer churn patterns and builds a machine learning model to predict churn using a real-world telecom dataset. It combines Exploratory Data Analysis (EDA), Business Impact Estimation, and Predictive Modeling to uncover valuable insights for retention strategies.
 
 ---
 
-## 📂 Dataset Overview
+## 🔍 Project Objectives
 
-The dataset contains information about **7,043 customers**, including:
-- 🧍 Demographic details (gender, senior citizen status, partner, dependents)
-- 🛠️ Service subscriptions (Internet, phone, streaming)
-- 💳 Billing information (contract type, charges, payment methods)
-- 🎯 Churn status (whether the customer left the service)
+- Understand which customers are leaving (churning) and why.
+- Visualize customer behaviors by contract type, tenure, and charges.
+- Quantify revenue loss due to churn.
+- Build and evaluate a churn prediction model.
+- Identify the most influential features driving churn.
+
+---
+
+## 🧠 Dataset Overview
+
+- 📦 **Rows**: 7043 customer records  
+- 📊 **Target Variable**: `Churn` (Yes/No)  
+- 🔑 **Features**: Contract type, tenure, payment method, monthly charges, etc.  
+
+---
 
 ## 📊 Exploratory Data Analysis (EDA)
-We begin by analyzing churn patterns across multiple variables to uncover actionable insights.
 
-### 🔸 Churn Distribution
-[Churn Distribution](https://github.com/user-attachments/assets/626d43ff-df2f-44a1-9995-0bc8dc79d78d)
+We begin by analyzing churn patterns across key variables.
 
-
-> **~26.6%** of customers churned.  
-> The dataset shows moderate imbalance.
-
-### 🔸 Churn by Contract Type
-
-([Churn by Time](https://github.com/user-attachments/assets/ff96d776-0edd-4f26-ae02-9a425ec4d879)
-)
-> Month-to-month customers have the **highest churn rate**, while yearly contracts reduce churn significantly.
-
-### 🔸 Churn Rate by Tenure
-
-![Churn rate by customer tenure](images/Churn%20rate%20by%20customer%20tenure.png)
-> Short-tenure customers are most likely to churn.  
-> Retention improves as tenure increases.
+### 🔹 Churn Distribution  
+![Churn Distribution](churn-analysis-visualizations/Churn%20Distribution.png)  
+> ~26.6% of customers have churned.  
+> The dataset shows a moderate class imbalance.
 
 ---
 
-## Revenue Impact of Churn
+### 🔹 Churn by Contract Type  
+![Churn by Time](churn-analysis-visualizations/Churn%20by%20Time.png)  
+> 📌 Customers with **month-to-month contracts** have the **highest churn rate**.  
+> 🛡️ Yearly contracts significantly reduce churn.
 
-We estimated the **business revenue loss** due to churn.
-![Revenue lost due to churning](images/Revenue%20lost%20due%20to%20churning.png)
+---
 
-- **Total Revenue Lost**: `$2,862,926.90`
-- **Avg Revenue per Churned Customer**: `$1,531.80`
-- **Monthly Revenue Impact**: `$139,130.85`
+### 🔹 Churn Rate by Tenure  
+![Churn rate by customer tenure](churn-analysis-visualizations/Churn%20rate%20by%20customer%20tenure.png)  
+> ⏳ Short-tenure customers are more likely to churn.  
+> 📈 Retention improves significantly with longer tenure.
 
-## 🧹 Data Preprocessing
+---
 
-- Converted `TotalCharges` to numeric (handling empty strings)
-- Imputed missing values using the **median**
-- Applied **Label Encoding** to categorical features
-- Scaled numerical features using **StandardScaler**
-- Removed `customerID` column (irrelevant for prediction)
+### 💸 Revenue Loss Due to Churn  
+![Revenue lost due to churning](churn-analysis-visualizations/Revenue%20lost%20due%20to%20churning.png)  
+> 💰 **Total Estimated Revenue Lost**: `$2,862,926.90`  
+> 💸 **Avg. Revenue Lost per Churned Customer**: `$1,531.80`  
+> 📆 **Approx. Monthly Loss**: `$139,130.85` if they had stayed
 
-## 🧠 Model Building
+---
 
-We trained a **Random Forest Classifier** using the preprocessed data.
-### ⚙️ Steps:
-- 80/20 train-test split
-- Feature scaling
-- Model training using:
-  ```python
+## 🤖 Model Building & Evaluation
 
-RandomForestClassifier(random_state=42)
-              precision    recall  f1-score   support
+We used a **Random Forest Classifier** for its robustness and ability to handle feature importance.
 
-No Churn        0.83        0.90      0.86      1033
-Churn           0.64        0.48      0.55       374
+### 🔹 Confusion Matrix  
+![Churn analysis confusion matrix](churn-analysis-visualizations/Churn%20analysis%20confusion%20matrix.png)  
+> ✅ **Model Accuracy**: `79%`  
+> ✅ Performs well for retained customers  
+> ⚠️ Can be improved in identifying churned customers (Recall for Class 1: `0.48`)
 
-Overall Accuracy: 0.79
+---
 
-## Confusion Matrix
-🔹 Most non-churners are correctly classified
-🔸 Some churners are still missed, highlighting room for improvement
+### 🔹 Feature Importance  
+![Churn Analysis Feature Importance](churn-analysis-visualizations/Churn%20Analysis%20Feature%20Importance.png)  
+> 📌 **Top Predictors of Churn**:  
+> - `TotalCharges`  
+> - `MonthlyCharges`  
+> - `Tenure`  
+> - `Contract Type`
 
-## Key Learnings
-Identified churn patterns with EDA and visual storytelling
-Quantified financial impact of customer attrition
-Applied data preprocessing & encoding techniques
-Built and evaluated a machine learning model from scratch
+---
 
-### Let’s Connect
-If you’re a recruiter, mentor, or ML enthusiast, feel free to connect and share feedback.
-I’m passionate about building data-driven solutions for real-world problems.
-Let’s fight churn — one prediction at a time!
+## 🔧 Future Improvements
+
+- Try models like **XGBoost**, **Logistic Regression** for comparison  
+- Apply **SMOTE** or **Class Weights** to handle class imbalance  
+- Perform **Hyperparameter Tuning** with `GridSearchCV`  
+- Deploy as an **interactive Streamlit Dashboard**
+
+---
+
+## 🧠 Key Learnings
+
+- Real-world EDA with business-driven insights  
+- Hands-on practice with missing data & encoding  
+- Understanding churn behavior using visuals  
+- Model building and evaluating with imbalanced classes  
+- Communicating revenue impact through data
+
+
+---
+
+## 📬 Let's Connect!
+
+💼 Looking for full-time Data Science or Machine Learning roles.  
+🌐 [LinkedIn](https://www.linkedin.com/) | 📧 shizuku@email.com *(update this to your actual contact)*  
+🎯 Passionate about using AI to solve real-world problems.
+
+> ⭐ If you found this interesting, give the repo a star!
+
+
 
 
 
