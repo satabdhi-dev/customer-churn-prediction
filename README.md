@@ -16,7 +16,7 @@ The dataset contains information about **7,043 customers**, including:
 We begin by analyzing churn patterns across multiple variables to uncover actionable insights.
 
 ### 🔸 Churn Distribution
-![Churn Distribution]![Churn Distribution](https://github.com/user-attachments/assets/626d43ff-df2f-44a1-9995-0bc8dc79d78d)
+[Churn Distribution](https://github.com/user-attachments/assets/626d43ff-df2f-44a1-9995-0bc8dc79d78d)
 
 
 > **~26.6%** of customers churned.  
