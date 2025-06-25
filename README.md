@@ -24,7 +24,7 @@ We begin by analyzing churn patterns across multiple variables to uncover action
 
 ### 🔸 Churn by Contract Type
 
-![Churn by Time]!([Churn by Time](https://github.com/user-attachments/assets/ff96d776-0edd-4f26-ae02-9a425ec4d879)
+([Churn by Time](https://github.com/user-attachments/assets/ff96d776-0edd-4f26-ae02-9a425ec4d879)
 )
 > Month-to-month customers have the **highest churn rate**, while yearly contracts reduce churn significantly.
 
