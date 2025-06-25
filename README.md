@@ -100,7 +100,7 @@ We used a **Random Forest Classifier** for its robustness and ability to handle 
 ## 📬 Let's Connect!
 
 💼 Looking for full-time Data Science or Machine Learning roles.  
-🌐 [LinkedIn](https://www.linkedin.com/) | 📧 shizuku@email.com *(update this to your actual contact)*  
+🌐 [LinkedIn](https://www.linkedin.com/in/satabdhi-priyadarsani-98093226b/)
 🎯 Passionate about using AI to solve real-world problems.
 
 > ⭐ If you found this interesting, give the repo a star!
